@@ -1,0 +1,20 @@
+function [summa, index] = max_sum(v,n)
+sum_ind=[];
+x=[];
+if (n > length(v))
+    summa=0;
+    index=-1;
+else
+    
+    for i =1:length(v)
+        if (i) >(length(v)-n+1)
+            break
+        else
+            sum_ind(i) = sum(v(i:(i+n-1)));
+            x(i)=i;
+        end
+    end
+    summa=max(sum_ind);
+    ind=x(find(sum_ind==max(sum_ind)));
+    index=ind(1);
+end
